@@ -33,6 +33,7 @@ function checkAnswer() {
         result.textContent = "Correct !";
         result.style.color = "green";
         score++;
+        confetti(); // Lancer l'animation de confettis
     } else {
         result.textContent = `Incorrect. La réponse était : ${correctAnswer}`;
         result.style.color = "red";
