@@ -33,7 +33,6 @@ const scoreDisplay = document.getElementById("score");
 function loadQuestion() {
     questionText.textContent = `Quel est le mot anglais pour : ${questions[currentQuestion].french} ?`;
     answerInput.value = "";
-    result.textContent = "";
     answerInput.focus(); // Sélectionne automatiquement le champ de saisie
 }
 
