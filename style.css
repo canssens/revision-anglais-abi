@@ -16,12 +16,6 @@ body {
     text-align: center;
 }
 
-#food-image {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
 #answer-input {
     padding: 8px;
     margin: 10px 0;
@@ -39,5 +33,10 @@ body {
 
 #result {
     margin-top: 10px;
+    font-weight: bold;
+}
+
+#score {
+    margin-top: 20px;
     font-weight: bold;
 }
