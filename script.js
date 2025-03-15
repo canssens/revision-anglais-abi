@@ -1,14 +1,14 @@
 const questions = [
-    { word: "apple" },
-    { word: "banana" },
-    { word: "bread" },
-    { word: "carrot" },
-    { word: "cheese" },
-    { word: "chicken" },
-    { word: "egg" },
-    { word: "fish" },
-    { word: "grapes" },
-    { word: "milk" },
+    { french: "pomme", english: "apple" },
+    { french: "banane", english: "banana" },
+    { french: "pain", english: "bread" },
+    { french: "carotte", english: "carrot" },
+    { french: "fromage", english: "cheese" },
+    { french: "poulet", english: "chicken" },
+    { french: "oeuf", english: "egg" },
+    { french: "poisson", english: "fish" },
+    { french: "raisins", english: "grapes" },
+    { french: "lait", english: "milk" },
     // Ajoutez d'autres aliments ici
 ];
 
@@ -21,14 +21,14 @@ const result = document.getElementById("result");
 const scoreDisplay = document.getElementById("score");
 
 function loadQuestion() {
-    questionText.textContent = `Quel est le mot anglais pour : ${questions[currentQuestion].word} ?`;
+    questionText.textContent = `Quel est le mot anglais pour : ${questions[currentQuestion].french} ?`;
     answerInput.value = "";
     result.textContent = "";
 }
 
 function checkAnswer() {
     const userAnswer = answerInput.value.toLowerCase();
-    const correctAnswer = questions[currentQuestion].word;
+    const correctAnswer = questions[currentQuestion].english;
     if (userAnswer === correctAnswer) {
         result.textContent = "Correct !";
         result.style.color = "green";
