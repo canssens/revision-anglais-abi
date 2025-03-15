@@ -9,6 +9,16 @@ const questions = [
     { french: "poisson", english: "fish" },
     { french: "raisins", english: "grapes" },
     { french: "lait", english: "milk" },
+    { french: "salé", english: "salty" },
+    { french: "sucré", english: "sweet" },
+    { french: "cremeux", english: "creamy" },
+    { french: "juteux", english: "juicy" },
+    { french: "savoureux", english: "tasty" },
+    { french: "croquant", english: "crunchy" },
+    { french: "croustillant", english: "crispy" },
+    { french: "dur à macher", english: "chewy" },
+    { french: "épicé", english: "spicy" },
+    { french: "limonade", english: "lemonade" },
     // Ajoutez d'autres aliments ici
 ];
 
@@ -24,6 +34,7 @@ function loadQuestion() {
     questionText.textContent = `Quel est le mot anglais pour : ${questions[currentQuestion].french} ?`;
     answerInput.value = "";
     result.textContent = "";
+    answerInput.focus(); // Sélectionne automatiquement le champ de saisie
 }
 
 function checkAnswer() {
@@ -33,7 +44,7 @@ function checkAnswer() {
         result.textContent = "Correct !";
         result.style.color = "green";
         score++;
-        confetti(); // Lancer l'animation de confettis
+        confetti();
     } else {
         result.textContent = `Incorrect. La réponse était : ${correctAnswer}`;
         result.style.color = "red";
@@ -50,5 +61,11 @@ function checkAnswer() {
 }
 
 submitButton.addEventListener("click", checkAnswer);
+
+answerInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
+});
 
 loadQuestion();
